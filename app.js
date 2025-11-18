@@ -72,3 +72,29 @@ async function verifyOTP() {
 
   alert("Phone verified & user saved!");
 }
+
+// === START DINNER TOPIC ===
+async function startTopic() {
+  const user = firebase.auth().currentUser;
+  if (!user) {
+    alert("You must sign in first!");
+    return;
+  }
+
+  const db = firebase.firestore();
+  const topic = "dinner";
+
+  await db.collection("users")
+    .doc(user.uid)
+    .collection("topics")
+    .doc(topic)
+    .collection("messages")
+    .add({
+      type: "topic_start",
+      topic: topic,
+      ts: new Date().toISOString()
+    });
+
+  alert("Dinner topic started!");
+}
+
