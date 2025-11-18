@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Phone Auth Demo</title>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+
+<script src="app.js"></script>
+
+
+  <style>
+    body { font-family: sans-serif; padding: 40px; max-width: 400px; }
+    input { margin: 6px 0; padding: 10px; width: 100%; font-size: 16px; }
+    button { padding: 10px; width: 100%; margin-top: 10px; font-size: 16px; }
+    #otp-section { display: none; }
+  </style>
+</head>
+
+<body>
+  <h2>Signup</h2>
+
+  <label>Username</label>
+  <input id="username" placeholder="Your name" />
+
+  <label>Phone Number</label>
+  <input id="phone" placeholder="+84901234567" />
+
+  <div id="recaptcha-container"></div>
+
+  <button onclick="sendOTP()">Send OTP</button>
+
+  <div id="otp-section">
+    <label>Enter OTP</label>
+    <input id="otp" placeholder="123456" />
+
+    <button onclick="verifyOTP()">Verify</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
