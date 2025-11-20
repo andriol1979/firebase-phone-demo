@@ -2,6 +2,7 @@
   "name": "functions",
   "description": "Cloud Functions for Firebase",
   "scripts": {
+    "lint": "./node_modules/.bin/eslint --max-warnings=0 .",
     "serve": "firebase emulators:start --only functions",
     "shell": "firebase functions:shell",
     "start": "npm run shell",
@@ -9,15 +10,17 @@
     "logs": "firebase functions:log"
   },
   "engines": {
-    "node": "22"
+    "node": "20"
   },
   "main": "index.js",
   "dependencies": {
-    "firebase-admin": "^12.6.0",
-    "firebase-functions": "^7.0.0",
+    "eslint-plugin-promise": "^7.2.1",
+    "firebase-admin": "^13.0.2",
+    "firebase-functions": "7.0.0",
     "openai": "^6.9.1"
   },
   "devDependencies": {
+    "eslint": "^8.57.1",
     "firebase-functions-test": "^3.1.0"
   },
   "private": true
